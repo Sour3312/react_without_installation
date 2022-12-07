@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- react js scripts -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="mydiv"> </div>
+    <script type="text/babel">
+        //component1
+        const COMP = () => {
+            const btn = () => {
+                alert('1st component')
+            }
+            return <button onClick={btn}>submit</button>
+        }
+        //component2
+        const COMP2 = () => {
+            const btn = () => {
+                alert('2nd component')
+            }
+            return <button onClick={btn}>submit</button>
+        }
+        //react code
+        class Hello extends React.Component {
+            render() {
+                return <div><h2>hello world <COMP /><COMP2 /></h2></div>
+            }
+        }
+        ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+
+    </script>
+</body>
+
+</html>
